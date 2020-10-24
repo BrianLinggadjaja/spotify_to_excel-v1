@@ -14,7 +14,7 @@ async function getLikedTracks() {
 	})
 	.catch((error) => {
 		sessionStorage.error = error
-		window.location.href = '/error/'
+		window.location.href = sessionStorage.mount_path + 'error/'
 	})
 
 	return data

@@ -1,7 +1,7 @@
 function checkForError() {
   let error = sessionStorage.getItem('error')
   if (error == null || error === 'undefined') {
-    window.location.href = '/'
+    window.location.href = sessionStorage.mount_path
   } else {
     returnError(error)
   }

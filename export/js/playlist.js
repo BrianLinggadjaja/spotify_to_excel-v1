@@ -33,7 +33,7 @@ async function getUserPlaylist() {
 	})
 	.catch((error) => {
 		sessionStorage.error = error
-		window.location.href = '/error/'
+		window.location.href = sessionStorage.mount_path + 'error/'
 	})
 
 	return data
@@ -129,7 +129,7 @@ async function seekTracks(id, offsetNumber) {
 	})
 	.catch((error) => {
 		sessionStorage.error = error
-		window.location.href = '/error/'
+		window.location.href = sessionStorage.mount_path + 'error/'
 	})
 
 	return data

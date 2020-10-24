@@ -13,7 +13,7 @@ async function getArtistGenre(artistsId) {
 	})
 	.catch((error) => {
 		sessionStorage.error = error
-		window.location.href = '/error/'
+		window.location.href = sessionStorage.mount_path + 'error/'
 	})
 
 	return genre

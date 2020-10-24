@@ -11,7 +11,6 @@ function requestAuth() {
 	sessionStorage.state = randomKey
 
 	// Route user to Spotify authentication service
-	console.log(window.location)
 	window.location.href = api + responseType + scope + clientId + redirectUri + state
 }
 
@@ -32,14 +31,15 @@ function checkAuth() {
 	let route = new URLSearchParams(window.location.hash)
 	let routeState = route.get('state')
 
+	sessionStorage.mount_path = window.location.pathname
 	sessionStorage.access_token = window.location.hash.split('&')[0].split('=')[1]
 	sessionStorage.token_type = route.get('token_type')
 	sessionStorage.expires_in = route.get('expires_in')
 
 	if ( route.has('expires_in') && validateSession(routeState) ) {
-		window.location.href = '/export/'
+		window.location.href =  sessionStorage.mount_path + 'export/'
 	} else if (window.location.pathname !== '/') {
-		window.location.href = '/'
+		window.location.href =  sessionStorage.mount_path
 	}
 }
 
