@@ -89,6 +89,7 @@ async function displayTracksInPlaylist(id) {
 		data.append(row)
 	}
 
+	enableToggleButton()
 	enableExport()
 }
 

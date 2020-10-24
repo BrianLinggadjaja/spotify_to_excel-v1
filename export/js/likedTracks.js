@@ -70,5 +70,6 @@ async function displayLikedTracks() {
 		data.append(row)
 	}
 
+	enableToggleButton()
 	enableExport()
 }

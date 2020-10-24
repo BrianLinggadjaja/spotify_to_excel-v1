@@ -18,3 +18,7 @@ body {
 .data {
 	display: none;
 }
+
+.no-interact {
+	pointer-events: none;
+}

@@ -30,9 +30,13 @@ function enableExport() {
 	exportContainer.append(exportButton)
 }
 
-function disableExport() {
-	let exportContainer = document.getElementById('export')
-	exportContainer.innerHTML = ''
+function enableToggleButton() {
+	exportContainer.classList.remove('no-interact')
+}
+
+function disableToggleButton() {
+	const exportContainer = document.querySelector('.option-selector')
+	exportContainer.classList.add('no-interact')
 }
 
 function exportExcelFromTable() {
