@@ -32,6 +32,8 @@ function enableExport() {
 
 function enableToggleButton() {
 	const exportContainer = document.querySelector('.option-selector')
+	const exportButton = document.querySelector('option-selector__export')
+	exportButton.remove()
 	exportContainer.classList.remove('no-interact')
 }
 
