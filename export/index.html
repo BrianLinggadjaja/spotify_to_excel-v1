@@ -1,0 +1,34 @@
+<head>
+	<title>Spotify to Excel | Export</title>
+	<link rel="stylesheet" href="./../css/override.css">
+	<link rel="stylesheet" href="./css/content.css">
+	<link rel="stylesheet" href="./css/optionSelector.css">
+	<script src="./../js/auth.js"></script>
+	<script src="./js/optionSelector.js"></script>
+	<script src="./js/export.js"></script>
+	<script src="./js/playlist.js"></script>
+	<script src="./js/likedTracks.js"></script>
+	<script src="./../package/axios.min.js"></script>
+	<script src="./../package/xlsx.min.js"></script>
+</head>
+
+<body onload="displayUserPlaylist()">
+	<header>
+		<nav tab-index="0" class="option-selector" onclick="toggleSelection()">
+			<ul class="option-selector__list">
+				<li class="option-selector__list-item">
+					<span id="playlist" class="option-selector__option">Playlist</span>
+				</li>
+				<span id="optionSelector" class="option-selector__bar left"></span>
+				<li class="option-selector__list-item">
+					<span id="likedTracks" class="option-selector__option">Liked Tracks</span>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="export" class="option-selector__export-container"></section>
+		<section id="content"></section>
+		<section id="exportExcel"></section>
+	</main>
+</body>

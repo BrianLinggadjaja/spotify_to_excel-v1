@@ -1,0 +1,22 @@
+.content {
+	background-color: rgb(225, 225, 225);
+	border: 1px solid rgb(25, 25, 25);
+	overflow: auto;
+	color: rgb(25, 25, 25);
+	max-height: 75%;
+	margin: 2rem 1rem;
+}
+
+.content__item {
+	font-weight: bold;
+	font-size: 1.5rem;
+	cursor: pointer;
+	padding: 1rem;
+	transition: 350ms ease-out;
+}
+
+.content__item:hover,
+.content__item:focus {
+	background-color: rgb(25, 25, 25);
+	color: rgb(225, 225, 225);
+}

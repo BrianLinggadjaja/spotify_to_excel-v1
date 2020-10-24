@@ -1,0 +1,20 @@
+<head>
+	<title>Spotify to Excel | Authorize</title>
+	<link rel="stylesheet" href="./css/override.css">
+	<link rel="stylesheet" href="./css/content.css">
+	<link rel="stylesheet" href="./css/authorize.css">
+	<script src="./js/auth.js"></script>
+</head>
+
+<body onload="checkAuth()" class="authorize">
+	<header class="authorize__header">
+		<h1>Spotify to Excel</h1>
+	</header>
+	<main class="authorize__content">
+		<section class="authorize__info">
+			<h1>We need your permission!</h1>
+			<h2>You must grant us permission to view your playlist & liked tracks.</h2>
+		</section>
+		<button onclick="requestAuth()" class="authorize__button">Request</button>
+	</main>
+</body>

@@ -1,0 +1,58 @@
+.authorize {
+	background: linear-gradient(315deg, rgb(40, 145, 195), rgb(25, 160, 145));
+	color: rgb(245, 245, 245);
+	display: flex;
+	flex-flow: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-bottom: 25vh;
+}
+
+.authorize__header {
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 2px 3px rgba(0, 0, 0, 0.5);
+	display: flex;
+	flex-flow: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 2rem 4rem;
+}
+
+.authorize__content {
+	font-size: 1.25rem;
+	display: flex;
+	flex-flow: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 2rem 4rem;
+}
+
+.authorize__info {
+	text-align: center;
+	width: 100%;
+	padding-bottom: 2rem;
+}
+
+.authorize__info h1 {
+	margin-bottom: 1rem;
+}
+
+.authorize__button {
+	font-size: 1.75rem;
+	background-color: rgb(40, 145, 165);
+	color: rgb(245, 245, 245);
+	border: 2px solid rgb(245, 245, 245);
+	border-radius: 2rem;
+	padding: 0.75rem 1.5rem;
+	transition: 350ms ease-out;
+	cursor: pointer;
+}
+
+.authorize__button:hover,
+.authorize__button:focus {
+	background-color: rgb(25, 160, 145);
+	color: rgb(245, 245, 245);
+	border: 2px solid rgb(245, 245, 245);
+}
