@@ -28,7 +28,7 @@ function generateRandomKey(length) {
 
 // Checks if user is Authorized
 function checkAuth() {
-	const mountPath = sessionStorage.mount_path
+	const mountPath = sessionStorage.mount_path.toString()
 	const route = new URLSearchParams(window.location.hash)
 	const routeState = route.get('state')
 
