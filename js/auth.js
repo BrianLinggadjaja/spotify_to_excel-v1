@@ -1,19 +1,18 @@
 function requestAuth() {
-	// Store URL mount path and remove trailing slash
-	const mountPath = window.location.pathname
-	if (mountPath.endsWith("/")) {
-		mountPath = mountPath.substring(0, mountPath.length() - 1);
-	}
-
 	let api = 'http://accounts.spotify.com/authorize'
 	let responseType = '?response_type=' + 'token'
 	let clientId = '&client_id=' + 'f800745ced564b6a8672795b779cfa15'
 	let scope = '&scope=' + 'user-library-read playlist-read-private'
-	let redirectUri = '&redirect_uri=' + mountPath
+	let redirectUri = '&redirect_uri=' + window.location.href
 	let randomKey = generateRandomKey(9)
 	let state = '&state=' + randomKey
 
 	// Store mount path for later
+	// Store URL mount path and remove trailing slash
+	let mountPath = window.location.href
+	if (mountPath.endsWith("/")) {
+		mountPath = mountPath.substring(0, mountPath.length - 1);
+	}
 	sessionStorage.mount_path = mountPath
 
 	// Store randomKey to match against state for later
@@ -37,7 +36,8 @@ function generateRandomKey(length) {
 
 // Checks if user is Authorized
 function checkAuth() {
-	const mountPath = window.location.pathname
+	// Store URL mount path and remove trailing slash
+	const mountPath = sessionStorage.mount_path
 	const route = new URLSearchParams(window.location.hash)
 	const routeState = route.get('state')
 
