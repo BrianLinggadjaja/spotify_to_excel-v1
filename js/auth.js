@@ -28,18 +28,19 @@ function generateRandomKey(length) {
 
 // Checks if user is Authorized
 function checkAuth() {
-	let route = new URLSearchParams(window.location.hash)
-	let routeState = route.get('state')
+	const mountPath = sessionStorage.mount_path
+	const route = new URLSearchParams(window.location.hash)
+	const routeState = route.get('state')
 
-	sessionStorage.mount_path = window.location.pathname
+	sessionStorage.mount_path = mountPath
 	sessionStorage.access_token = window.location.hash.split('&')[0].split('=')[1]
 	sessionStorage.token_type = route.get('token_type')
 	sessionStorage.expires_in = route.get('expires_in')
 
 	if ( route.has('expires_in') && validateSession(routeState) ) {
-		window.location.href =  sessionStorage.mount_path + 'export/'
-	} else if (window.location.pathname !== '/') {
-		window.location.href =  sessionStorage.mount_path
+		window.location.href =  mountPath + 'export/'
+	} else if (window.location.pathname !== mountPath) {
+		window.location.href =  mountPath
 	}
 }
 
