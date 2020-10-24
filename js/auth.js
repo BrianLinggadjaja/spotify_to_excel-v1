@@ -36,7 +36,6 @@ function generateRandomKey(length) {
 
 // Checks if user is Authorized
 function checkAuth() {
-	// Store URL mount path and remove trailing slash
 	const mountPath = sessionStorage.mount_path
 	const route = new URLSearchParams(window.location.hash)
 	const routeState = route.get('state')
