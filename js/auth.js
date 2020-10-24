@@ -7,6 +7,9 @@ function requestAuth() {
 	let randomKey = generateRandomKey(9)
 	let state = '&state=' + randomKey
 
+	// Store initial mount path
+	sessionStorage.mount_path = sessionStorage.mount_path
+
 	// Store randomKey to match against state for later
 	sessionStorage.state = randomKey
 
@@ -28,18 +31,18 @@ function generateRandomKey(length) {
 
 // Checks if user is Authorized
 function checkAuth() {
+	const mountPath = sessionStorage.mount_path
 	const route = new URLSearchParams(window.location.hash)
 	const routeState = route.get('state')
 
-	sessionStorage.mount_path = sessionStorage.mount_path
 	sessionStorage.access_token = window.location.hash.split('&')[0].split('=')[1]
 	sessionStorage.token_type = route.get('token_type')
 	sessionStorage.expires_in = route.get('expires_in')
 
 	if ( route.has('expires_in') && validateSession(routeState) ) {
-		window.location.href =  sessionStorage.mount_path + 'export/'
-	} else if (window.location.pathname !== sessionStorage.mount_path) {
-		window.location.href =  sessionStorage.mount_path
+		window.location.href =  mountPath + 'export/'
+	} else if (window.location.pathname !== mountPath) {
+		window.location.href =  mountPath
 	}
 }
 
