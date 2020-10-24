@@ -8,7 +8,7 @@ function requestAuth() {
 	let state = '&state=' + randomKey
 
 	// Store initial mount path
-	sessionStorage.mount_path = sessionStorage.mount_path
+	sessionStorage.mount_path = window.location.pathname
 
 	// Store randomKey to match against state for later
 	sessionStorage.state = randomKey
@@ -41,8 +41,6 @@ function checkAuth() {
 
 	if ( route.has('expires_in') && validateSession(routeState) ) {
 		window.location.href =  mountPath + 'export/'
-	} else if (window.location.pathname !== mountPath) {
-		window.location.href =  mountPath
 	}
 }
 
