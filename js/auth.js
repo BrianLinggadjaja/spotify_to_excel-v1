@@ -1,14 +1,20 @@
 function requestAuth() {
+	// Store URL mount path and remove trailing slash
+	const mountPath = window.location.pathname
+	if (mountPath.endsWith("/")) {
+		mountPath = mountPath.substring(0, mountPath.length() - 1);
+	}
+
 	let api = 'http://accounts.spotify.com/authorize'
 	let responseType = '?response_type=' + 'token'
 	let clientId = '&client_id=' + 'f800745ced564b6a8672795b779cfa15'
 	let scope = '&scope=' + 'user-library-read playlist-read-private'
-	let redirectUri = '&redirect_uri=' + window.location.href
+	let redirectUri = '&redirect_uri=' + mountPath
 	let randomKey = generateRandomKey(9)
 	let state = '&state=' + randomKey
 
-	// Store initial mount path
-	sessionStorage.mount_path = window.location.pathname
+	// Store mount path for later
+	sessionStorage.mount_path = mountPath
 
 	// Store randomKey to match against state for later
 	sessionStorage.state = randomKey
@@ -40,7 +46,7 @@ function checkAuth() {
 	sessionStorage.expires_in = route.get('expires_in')
 
 	if ( route.has('expires_in') && validateSession(routeState) ) {
-		window.location.href =  mountPath + 'export/'
+		window.location.href =  mountPath + '/export/'
 	}
 }
 
