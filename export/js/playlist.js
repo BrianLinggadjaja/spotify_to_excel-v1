@@ -11,6 +11,7 @@ async function displayUserPlaylist() {
 		playlistItem.innerHTML = playlists[i].name
 		playlistItem.classList.add('content__item')
 		playlistItem.onclick = () => {
+			disableToggleButton()
 			displayTracksInPlaylist(playlists[i].id)
 		}
 		playlistContainer.append(playlistItem)

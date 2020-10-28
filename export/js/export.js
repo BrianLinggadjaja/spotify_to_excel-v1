@@ -20,14 +20,22 @@ async function getArtistGenre(artistsId) {
 }
 
 function enableExport() {
-	let exportContainer = document.getElementById('export')
+	const exportContainer = document.getElementById('export')
 	let exportButton = document.createElement('button')
 	exportButton.onclick = () => {
 		exportExcelFromTable()
 	}
-	exportButton.innerHTML = 'Export'
+	exportButton.innerText = 'Export'
 	exportButton.classList.add('option-selector__export')
 	exportContainer.append(exportButton)
+}
+
+function disableExport() {
+	const exportButton = document.querySelector('.option-selector__export')
+
+	if (exportButton) {
+		exportButton.remove()
+	}
 }
 
 function enableToggleButton() {
@@ -36,11 +44,9 @@ function enableToggleButton() {
 }
 
 function disableToggleButton() {
-	const exportButton = document.querySelector('option-selector__export')
-	const exportContainer = document.querySelector('.option-selector')
+	const toggleButtonContainer = document.querySelector('.option-selector')
 
-	exportButton.remove()
-	exportContainer.classList.add('no-interact')
+	toggleButtonContainer.classList.add('no-interact')
 }
 
 function exportExcelFromTable() {
