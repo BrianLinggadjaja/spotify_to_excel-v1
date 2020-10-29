@@ -2,7 +2,7 @@
 
 This tool uses the **Spotify Api** to deliver your list of *playlists* and *tracks* to be **exported** as an **excel format**.
 
-Project created in-conjunction with an automation tool made by my friend.
+Project created in-conjunction with an automation tool made by a friend.
 
 Visit the GitHub page at https://brianlinggadjaja.github.io/spotify_to_excel-v1/
 
