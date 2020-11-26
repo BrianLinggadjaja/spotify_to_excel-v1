@@ -1,7 +1,7 @@
 function requestAuth() {
 	let api = 'http://accounts.spotify.com/authorize'
 	let responseType = '?response_type=' + 'token'
-	let clientId = '&client_id=' + '7ab5e5f1bdd843fd869dfb18e37d8821'
+	let clientId = '&client_id=' + '59cf7a3b237a451f953a56c02dfcb52e'
 	let scope = '&scope=' + 'user-library-read playlist-read-private'
 	let redirectUri = '&redirect_uri=' + window.location.href
 	let randomKey = generateRandomKey(9)
